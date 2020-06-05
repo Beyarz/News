@@ -1,0 +1,28 @@
+@charset "utf-8";
+
+:root {
+  --light: rgb(199, 199, 199);
+  --dark: #363636;
+
+  --main-header-light: #363636;
+  --header-light: #ffcef3;
+  --subtitle-light: #cabbe9;
+  --button-light: #cabbe9;
+  --bg-light: #fcfcfc;
+  --box-light: white;
+
+  --main-header-dark: #fdfdfd;
+  --header-dark: #9e579d;
+  --subtitle-dark: #574b90;
+  --button-dark: #574b90;
+  --bg-dark: #171c27;
+  --box-dark: #000000;
+}
+
+
+html, body {
+  font-family: -apple-system, BlinkMacSystemFont, segoe ui, roboto, oxygen,
+    ubuntu, cantarell, fira sans, droid sans, helvetica neue, sans-serif;
+  overflow-y: auto;
+  overflow-x: hidden;
+}

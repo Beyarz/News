@@ -1,0 +1,33 @@
+@import "./application.scss";
+@import "./light.scss";
+@import "./dark.scss";
+
+@media (prefers-color-scheme: no-preference) {
+  html, body {
+    background-color: var(--light);
+  }
+
+  button, .button {
+    color: var(--dark);
+    background-color: var(--button-light);
+    border-color: var(--light);
+  }
+
+  .title {
+    color: var(--title)
+  }
+
+  .main-title {
+    color: var(--dark);
+  }
+
+  .subtitle {
+    color: var(--subtitle-light);
+    font-weight: 200;
+  }
+}
+
+.is-centered {
+  margin: 0 auto;
+  display: block;
+}
