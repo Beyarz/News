@@ -29,7 +29,7 @@ function createArticle (NEWS_TITLE: string,
   NEWS_TYPE: string,
   NEWS_TAG: string,
   NEWS_AUTHOR: string) {
-  return `<div class="column is-three-fifths is-offset-one-fifth">
+  return `<div class="container" style="padding: 2rem;">
       <div class="card">
         <div class="card-content">
           <div class="media">
@@ -68,13 +68,19 @@ getNews().then((value: Result): Array<string> => {
   let article: string = null
 
   for (let x = 0; x <= value.newsSize - 1; x++) {
-    article = createArticle(value.title[x], value.created[x], value.updated[x], value.description[x], value.tagType[x], value.tagTitle[x], value.author[x])
+    article = createArticle(value.title[x],
+      value.created[x],
+      value.updated[x] !== value.created[x] ? value.updated[x] : 'Nej',
+      value.description[x],
+      value.tagType[x],
+      value.tagTitle[x],
+      value.author[x])
+
     articles.push(article)
   }
   return articles
 }).then((articles: any): void => {
   const app: HTMLElement = document.getElementById('root')
-
   articles.forEach((article: string) => {
     injectContent(app, article)
   })

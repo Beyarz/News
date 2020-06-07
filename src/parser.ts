@@ -17,32 +17,10 @@ export interface Result {
 const options: Option = require('./assets/config.json')
 const axios = require('axios').default
 
-// function returnFakeString (): Result {
-//   const result: Result = {
-//     newsCount: [1],
-//     tagType: 'org',
-//     tagTitle: 'tag',
-//     author: 'name',
-//     created: 'created',
-//     updated: 'updated',
-//     title: 'title',
-//     description: 'description',
-//     error: null
-//   }
-//   return result
-// }
-
-// export function getNews (): Promise<any> {
-//   const promise = new Promise((resolve) => {
-//     resolve(returnFakeString())
-//   })
-//   return promise
-// }
-
 /**
  * @returns {Promise}
  */
-export function getNews (): Promise<any> {
+export async function getNews (): Promise<any> {
   return axios({
     method: 'GET',
     url: options.source,
@@ -81,8 +59,8 @@ export function getNews (): Promise<any> {
           }
 
           author.push(newsCount[i].authors[0].title)
-          created.push(newsCount[i].changes.created)
-          updated.push(newsCount[i].changes.updated)
+          created.push(new Date(newsCount[i].changes.created).toLocaleString())
+          updated.push(new Date(newsCount[i].changes.updated).toLocaleString())
           title.push(newsCount[i].title.value)
         } else {
           adCounter += 1
