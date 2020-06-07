@@ -3,8 +3,8 @@
 @import "./dark.scss";
 
 @media (prefers-color-scheme: no-preference) {
-  html, body {
-    background-color: var(--light);
+  body {
+    background-color: var(--bg-light)
   }
 
   button, .button {
@@ -18,7 +18,7 @@
   }
 
   .main-title {
-    color: var(--dark);
+    color: var(--dark)
   }
 
   .subtitle {
@@ -30,4 +30,20 @@
 .is-centered {
   margin: 0 auto;
   display: block;
+}
+
+.page-wrapper:before, .page-wrapper:after {
+  left: 0;
+  right: 0;
+  content: '';
+  height: 35vh;
+  position: absolute;
+}
+
+.page-wrapper:before {
+  background-color: white
+}
+
+#news_content {
+  text-align: left;
 }

@@ -1,5 +1,5 @@
 @media (prefers-color-scheme: dark) {
-  html, body {
+  body {
     background-color: var(--bg-dark);
     transition: var(--bg-dark), var(--light), 1s;
   }
@@ -15,7 +15,7 @@
   }
 
   .main-title {
-    color: var(--main-header-dark);
+    color: var(--main-header-dark)
   }
 
   .subtitle {
@@ -24,6 +24,6 @@
   }
 
   .box {
-    background-color: var(--box-dark);
+    background-color: var(--box-dark)
   }
 }

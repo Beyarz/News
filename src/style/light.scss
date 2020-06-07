@@ -1,5 +1,5 @@
 @media (prefers-color-scheme: light) {
-  html, body {
+  body {
     background-color: var(--bg-light);
     transition: var(--bg-light), var(--dark), 1s;
   }
@@ -15,7 +15,7 @@
   }
 
   .main-title {
-    color: var(--dark);
+    color: var(--dark)
   }
 
   .subtitle {
@@ -24,6 +24,6 @@
   }
 
   .box {
-    background-color: var(--box-light);
+    background-color: var(--box-light)
   }
 }
