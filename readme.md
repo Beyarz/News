@@ -1,6 +1,9 @@
 # News
 
-A simple & configurable website to display the latest news
+A simple & configurable website to display the latest news.
+
+The latest data is fetched & parsed in real time.
+The website does automatically switch between dark & light mode depending on your preferred setting.
 
 ## Getting started
 
