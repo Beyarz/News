@@ -74,16 +74,16 @@ export function getNews (): Promise<any> {
             tagTitle.push(newsCount[i].tags[x].title)
           }
 
-          author.push(newsCount[i].authors)
-          created.push(newsCount[i].changes.created)
-          updated.push(newsCount[i].changes.updated)
-          title.push(newsCount[i].title.value)
-
           for (let z = 0; z <= componentsArrayLength - 1; z++) {
             if (newsCount[i].components[z].type === 'text') {
               description.push(newsCount[i].components[z].text.value)
             }
           }
+
+          author.push(newsCount[i].authors[0].title)
+          created.push(newsCount[i].changes.created)
+          updated.push(newsCount[i].changes.updated)
+          title.push(newsCount[i].title.value)
         } else {
           adCounter += 1
         }
