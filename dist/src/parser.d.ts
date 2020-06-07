@@ -10,6 +10,7 @@ export interface Result {
     error: string;
 }
 /**
- * @returns {Promise}
+ * @export
+ * @returns {Promise<any>}
  */
 export declare function getNews(): Promise<any>;

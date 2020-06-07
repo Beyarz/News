@@ -18,7 +18,8 @@ const options: Option = require('./assets/config.json')
 const axios = require('axios').default
 
 /**
- * @returns {Promise}
+ * @export
+ * @returns {Promise<any>}
  */
 export async function getNews (): Promise<any> {
   return axios({
