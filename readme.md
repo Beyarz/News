@@ -14,7 +14,11 @@ The website does automatically switch between dark & light mode depending on you
 ### Install
 
 ```shell
-npm i
+npm install -g yarn
+```
+
+```shell
+yarn
 ```
 
 ## Commands
