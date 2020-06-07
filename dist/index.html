@@ -20,41 +20,7 @@
     <h1 class="title main-title has-text-centered">Latest news</h1>
   </div>
 
-  <div class="columns" style="padding-top: 3rem;" id="app">
-
-    <div class="column is-three-fifths is-offset-one-fifth">
-      <div class="card">
-        <div class="card-content">
-          <div class="media">
-            <div class="media-content">
-              <div class="columns">
-                <div class="column">
-                  <p class="title is-4" id="news_title">{{ NEWS_TITLE }}</p>
-                </div>
-                <div class="column">
-                  <p style="float: right" id="news_created">Skapad: {{ NEWS_CREATED }}</p>
-                  <p style="float: right" id="news_updated">Ändrad: {{ NEWS_UPDATED }}</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="content" id="news_content">
-            {{ NEWS_DESCRIPTION }}
-          </div>
-
-          <div class="container">
-            <span class="tag is-light">{{ NEWS_TYPE }}</span>
-            <span class="tag is-dark">{{ NEWS_TAG }}</span>
-          </div>
-
-          <div class="container" style="padding-top: 1rem; text-align: right;">
-            <p class="subtitle">{{ NEWS_AUTHOR }}</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </div>
+  <div class="columns" style="padding-top: 3rem;" id="root"></div>
   <script async src="./main.js"></script>
 </body>
 </html>

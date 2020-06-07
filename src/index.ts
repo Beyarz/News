@@ -22,13 +22,23 @@ const templateStructure = `<div class="column is-three-fifths is-offset-one-fift
               <p class="title is-4" id="news_title">{{ NEWS_TITLE }}</p>
             </div>
             <div class="column">
-              <time datetime="2018-07-07" style="float: right" id="news_date">{{ NEWS_DATE }}</time>
+              <p style="float: right" id="news_created">Skapad: {{ NEWS_CREATED }}</p>
+              <p style="float: right" id="news_updated">Ändrad: {{ NEWS_UPDATED }}</p>
             </div>
           </div>
         </div>
       </div>
       <div class="content" id="news_content">
-        {{ NEWS_CONTENT }}
+        {{ NEWS_DESCRIPTION }}
+      </div>
+
+      <div class="container">
+        <span class="tag is-light">{{ NEWS_TYPE }}</span>
+        <span class="tag is-dark">{{ NEWS_TAG }}</span>
+      </div>
+
+      <div class="container" style="padding-top: 1rem; text-align: right;">
+        <p class="subtitle">{{ NEWS_AUTHOR }}</p>
       </div>
     </div>
   </div>
@@ -47,10 +57,17 @@ function templateParser (template: string, search: RegExp): RegExpMatchArray {
 }
 
 getNews().then((value: Result): void => {
-  // const pointOfInjection: RegExp = /{{2}\s[^ ]+\s}{2}/g
-  // const matchArray: RegExpMatchArray = templateParser(templateStructure, pointOfInjection)
+  const pointOfInjection: RegExp = /{{2}\s[^ ]+\s}{2}/g
+  const stripCurlyBraces: RegExp = /({{2}\s)|(\s}{2})/g
+  const matchArray: RegExpMatchArray = templateParser(templateStructure, pointOfInjection)
 
-  // injectContent(titleTag, value.title)
-  // injectContent(dateTag, value.date)
-  // injectContent(contentTag, value.description)
+  const strippedArray: Array<string> = []
+  matchArray.forEach(element => {
+    strippedArray.push(element.replace(stripCurlyBraces, ''))
+  })
+
+  console.log(strippedArray)
+  console.log(value)
+}).then((value: any): void => {
+  const app: HTMLElement = document.getElementById('app')
 })

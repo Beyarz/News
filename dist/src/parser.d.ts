@@ -1,5 +1,5 @@
 export interface Result {
-    newsCount: string;
+    newsCount: Array<number>;
     tagType: string;
     tagTitle: string;
     author: string;
@@ -9,7 +9,7 @@ export interface Result {
     description: string;
     error: string;
 }
+export declare function getNews(): Promise<any>;
 /**
  * @returns {Promise}
  */
-export declare function getNews(): Promise<any>;
