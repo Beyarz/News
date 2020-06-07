@@ -28,7 +28,9 @@ function createArticle (NEWS_TITLE: string,
   NEWS_DESCRIPTION: string,
   NEWS_TYPE: string,
   NEWS_TAG: string,
-  NEWS_AUTHOR: string) {
+  NEWS_AUTHOR: Array<string>) {
+  // NEWS_AUTHOR.forEach(author)
+
   return `<div class="column is-three-fifths is-offset-one-fifth">
       <div class="card">
         <div class="card-content">
@@ -67,11 +69,11 @@ getNews().then((value: Result): Array<string> => {
   console.log(value)
 
   const articles: Array<string> = []
-  for (let start = 0; start <= value.newsCount.length - 1; start++) {
-    articles.push(
-      createArticle(value.title, value.created, value.updated, value.description, value.tagType, value.tagTitle, value.author)
-    )
-  }
+  // for (let start = 0; start <= value.newsCount.length - 1; start++) {
+  //   articles.push(
+  //     createArticle(value.title[start], value.created[start], value.updated[start], value.description[start], value.tagType[start], value.tagTitle[start], value.author)
+  //   )
+  // }
   return articles
 }).then((articles: any): void => {
   const app: HTMLElement = document.getElementById('root')

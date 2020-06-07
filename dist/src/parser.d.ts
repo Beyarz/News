@@ -1,15 +1,15 @@
 export interface Result {
     newsCount: Array<number>;
-    tagType: string;
-    tagTitle: string;
-    author: string;
-    created: string;
-    updated: string;
-    title: string;
-    description: string;
+    tagType: Array<string>;
+    tagTitle: Array<string>;
+    author: Array<string>;
+    created: Array<string>;
+    updated: Array<string>;
+    title: Array<string>;
+    description: Array<string>;
     error: string;
 }
-export declare function getNews(): Promise<any>;
 /**
  * @returns {Promise}
  */
+export declare function getNews(): Promise<any>;

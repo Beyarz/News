@@ -4,90 +4,116 @@ interface Option {
 
 export interface Result {
   newsCount: Array<number>,
-  tagType: string,
-  tagTitle: string,
-  author: string,
-  created: string,
-  updated: string,
-  title: string,
-  description: string,
+  tagType: Array<string>,
+  tagTitle: Array<string>,
+  author: Array<string>,
+  created: Array<string>,
+  updated: Array<string>,
+  title: Array<string>,
+  description: Array<string>,
   error: string
 }
 
 const options: Option = require('./assets/config.json')
 const axios = require('axios').default
 
-function returnFakeString (): Result {
-  const result: Result = {
-    newsCount: [1],
-    tagType: 'org',
-    tagTitle: 'tag',
-    author: 'name',
-    created: 'created',
-    updated: 'updated',
-    title: 'title',
-    description: 'description',
-    error: null
-  }
-  return result
-}
+// function returnFakeString (): Result {
+//   const result: Result = {
+//     newsCount: [1],
+//     tagType: 'org',
+//     tagTitle: 'tag',
+//     author: 'name',
+//     created: 'created',
+//     updated: 'updated',
+//     title: 'title',
+//     description: 'description',
+//     error: null
+//   }
+//   return result
+// }
 
-export function getNews (): Promise<any> {
-  const promise = new Promise((resolve) => {
-    resolve(returnFakeString())
-  })
-  return promise
-}
+// export function getNews (): Promise<any> {
+//   const promise = new Promise((resolve) => {
+//     resolve(returnFakeString())
+//   })
+//   return promise
+// }
 
 /**
  * @returns {Promise}
  */
-// export function getNews (): Promise<any> {
-//   return axios({
-//     method: 'GET',
-//     url: options.source,
-//     headers: {
-//       'Content-Type': 'text/plain'
-//     }
-//   })
-//     .then(function (response: any): Result {
-//       const newsCount: string = response.data.entries
-//       const tagType: string = response.data.entries[0].tags[0].type
-//       const tagTitle: string = response.data.entries[0].tags[0].title
-//       const author: string = response.data.entries[0].authors
-//       const created: string = response.data.entries[0].changes.created
-//       const updated: string = response.data.entries[0].changes.updated
-//       const title: string = response.data.entries[0].title.value
-//       // Type has to be text response.data.entries[0].components[0].type
-//       const description: string = response.data.entries[0].components[1].text.value
+export function getNews (): Promise<any> {
+  return axios({
+    method: 'GET',
+    url: options.source,
+    headers: {
+      'Content-Type': 'text/plain'
+    }
+  })
+    .then(function (response: any): Result {
+      const newsCount: Array<any> = response.data.entries
 
-//       const result: Result = {
-//         newsCount: newsCount,
-//         tagType: tagType,
-//         tagTitle: tagTitle,
-//         author: author,
-//         created: created,
-//         updated: updated,
-//         title: title,
-//         description: description,
-//         error: null
-//       }
-//       return result
-//     })
-//     .catch(function (error: string): Result {
-//       const result: Result = {
-//         newsCount: null,
-//         tagType: null,
-//         tagTitle: null,
-//         author: null,
-//         created: null,
-//         updated: null,
-//         title: null,
-//         description: null,
-//         error: error
-//       }
+      const tagType: Array<string> = []
+      const tagTitle: Array<string> = []
+      const author: Array<string> = []
+      const created: Array<string> = []
+      const updated: Array<string> = []
+      const title: Array<string> = []
+      const description: Array<string> = []
+      let tagsArrayLength: number = 0
+      let componentsArrayLength: number = 0
 
-//       console.log(error)
-//       return result
-//     })
-// }
+      for (let i = 0; i <= newsCount.length - 1; i++) {
+        if (newsCount[i].components[0].type !== 'advert') {
+          tagsArrayLength = response.data.entries[i].tags.length
+          componentsArrayLength = response.data.entries[i].components.length
+
+          for (let x = 0; x <= tagsArrayLength - 1; x++) {
+            tagType.push(response.data.entries[i].tags[0].type)
+            tagTitle.push(response.data.entries[i].tags[0].title)
+          }
+
+          author.push(response.data.entries[i].authors)
+          created.push(response.data.entries[i].changes.created)
+          updated.push(response.data.entries[i].changes.updated)
+          title.push(response.data.entries[i].title.value)
+
+          // Type has to be text response.data.entries[0].components[0].type
+          for (let z = 0; z <= componentsArrayLength - 1; z++) {
+            if (response.data.entries[i].components[z].type === 'test') {
+              description.push(response.data.entries[i].components[z].text.value)
+            }
+          }
+        }
+      }
+
+      const result: Result = {
+        newsCount: newsCount,
+        tagType: tagType,
+        tagTitle: tagTitle,
+        author: author,
+        created: created,
+        updated: updated,
+        title: title,
+        description: description,
+        error: null
+      }
+      return result
+    })
+    .catch(function (error: string): Result {
+      const result: Result = {
+        newsCount: null,
+        tagType: null,
+        tagTitle: null,
+        author: null,
+        created: null,
+        updated: null,
+        title: null,
+        description: null,
+        error: error
+      }
+
+      console.log(error)
+      return result
+    })
+}
