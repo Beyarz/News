@@ -65,23 +65,22 @@ export function getNews (): Promise<any> {
 
       for (let i = 0; i <= newsCount.length - 1; i++) {
         if (newsCount[i].components[0].type !== 'advert') {
-          tagsArrayLength = response.data.entries[i].tags.length
-          componentsArrayLength = response.data.entries[i].components.length
+          tagsArrayLength = newsCount[i].tags.length
+          componentsArrayLength = newsCount[i].components.length
 
           for (let x = 0; x <= tagsArrayLength - 1; x++) {
-            tagType.push(response.data.entries[i].tags[0].type)
-            tagTitle.push(response.data.entries[i].tags[0].title)
+            tagType.push(newsCount[i].tags[x].type)
+            tagTitle.push(newsCount[i].tags[x].title)
           }
 
-          author.push(response.data.entries[i].authors)
-          created.push(response.data.entries[i].changes.created)
-          updated.push(response.data.entries[i].changes.updated)
-          title.push(response.data.entries[i].title.value)
+          author.push(newsCount[i].authors)
+          created.push(newsCount[i].changes.created)
+          updated.push(newsCount[i].changes.updated)
+          title.push(newsCount[i].title.value)
 
-          // Type has to be text response.data.entries[0].components[0].type
           for (let z = 0; z <= componentsArrayLength - 1; z++) {
-            if (response.data.entries[i].components[z].type === 'test') {
-              description.push(response.data.entries[i].components[z].text.value)
+            if (newsCount[i].components[z].type === 'text') {
+              description.push(newsCount[i].components[z].text.value)
             }
           }
         }

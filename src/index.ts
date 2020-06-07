@@ -69,11 +69,9 @@ getNews().then((value: Result): Array<string> => {
   console.log(value)
 
   const articles: Array<string> = []
-  // for (let start = 0; start <= value.newsCount.length - 1; start++) {
-  //   articles.push(
-  //     createArticle(value.title[start], value.created[start], value.updated[start], value.description[start], value.tagType[start], value.tagTitle[start], value.author)
-  //   )
-  // }
+  for (let start = 0; start <= value.newsCount.length - 1; start++) {
+
+  }
   return articles
 }).then((articles: any): void => {
   const app: HTMLElement = document.getElementById('root')
