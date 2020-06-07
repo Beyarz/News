@@ -1,13 +1,7 @@
 @media (prefers-color-scheme: dark) {
-  body {
+  html, body {
     background-color: var(--bg-dark);
     transition: var(--bg-dark), var(--light), 1s;
-  }
-
-  button, .button {
-    color: var(--light);
-    background-color: var(--button-dark);
-    border-color: var(--button-dark);
   }
 
   .title {
@@ -23,7 +17,15 @@
     font-weight: 300;
   }
 
-  .box {
+  .card-content {
     background-color: var(--box-dark)
+  }
+
+  .page-wrapper:before {
+    background-color: var(--bg-lighter)
+  }
+
+  .content, p {
+    color: var(--light)
   }
 }

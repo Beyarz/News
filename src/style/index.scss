@@ -7,12 +7,6 @@
     background-color: var(--bg-light)
   }
 
-  button, .button {
-    color: var(--dark);
-    background-color: var(--button-light);
-    border-color: var(--light);
-  }
-
   .title {
     color: var(--title)
   }
@@ -25,11 +19,14 @@
     color: var(--subtitle-light);
     font-weight: 200;
   }
-}
 
-.is-centered {
-  margin: 0 auto;
-  display: block;
+  .box {
+    background-color: var(--box-light)
+  }
+
+  .page-wrapper:before {
+    background-color: var(--box-light)
+  }
 }
 
 .page-wrapper:before, .page-wrapper:after {
@@ -38,10 +35,6 @@
   content: '';
   height: 50vh;
   position: absolute;
-}
-
-.page-wrapper:before {
-  background-color: white
 }
 
 #news_content {

@@ -1,13 +1,7 @@
 @media (prefers-color-scheme: light) {
-  body {
+  html, body {
     background-color: var(--bg-light);
     transition: var(--bg-light), var(--dark), 1s;
-  }
-
-  button, .button {
-    color: var(--dark);
-    background-color: var(--button-light);
-    border-color: var(--button-light);
   }
 
   .title {
@@ -24,6 +18,10 @@
   }
 
   .box {
+    background-color: var(--box-light)
+  }
+
+  .page-wrapper:before {
     background-color: var(--box-light)
   }
 }
