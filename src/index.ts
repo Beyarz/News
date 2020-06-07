@@ -69,7 +69,7 @@ getNews().then((value: Result): Array<string> => {
   console.log(value)
 
   const articles: Array<string> = []
-  for (let start = 0; start <= value.newsCount.length - 1; start++) {
+  for (let start = 0; start <= value.newsSize - 1; start++) {
 
   }
   return articles

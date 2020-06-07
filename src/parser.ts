@@ -3,7 +3,7 @@ interface Option {
 }
 
 export interface Result {
-  newsCount: Array<number>,
+  newsSize: number,
   tagType: Array<string>,
   tagTitle: Array<string>,
   author: Array<string>,
@@ -62,6 +62,7 @@ export function getNews (): Promise<any> {
       const description: Array<string> = []
       let tagsArrayLength: number = 0
       let componentsArrayLength: number = 0
+      let adCounter: number = 0
 
       for (let i = 0; i <= newsCount.length - 1; i++) {
         if (newsCount[i].components[0].type !== 'advert') {
@@ -83,11 +84,13 @@ export function getNews (): Promise<any> {
               description.push(newsCount[i].components[z].text.value)
             }
           }
+        } else {
+          adCounter += 1
         }
       }
 
       const result: Result = {
-        newsCount: newsCount,
+        newsSize: newsCount.length - adCounter,
         tagType: tagType,
         tagTitle: tagTitle,
         author: author,
@@ -101,7 +104,7 @@ export function getNews (): Promise<any> {
     })
     .catch(function (error: string): Result {
       const result: Result = {
-        newsCount: null,
+        newsSize: null,
         tagType: null,
         tagTitle: null,
         author: null,

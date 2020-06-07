@@ -1,5 +1,5 @@
 export interface Result {
-    newsCount: Array<number>;
+    newsSize: number;
     tagType: Array<string>;
     tagTitle: Array<string>;
     author: Array<string>;
