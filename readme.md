@@ -1,10 +1,14 @@
 # News
 
-A simple & configurable site to display the latest news
+A simple & configurable website to display the latest news
 
 ## Getting started
 
-* [Npm](https://nodejs.org)
+### Requirements
+
+[Npm](https://nodejs.org) is required
+
+### Install
 
 ```shell
 npm i
@@ -12,7 +16,7 @@ npm i
 
 ## Commands
 
-### Bundle with watch on dev environment
+### Run the dev environment with watch mode on
 
 `yarn run dev`
 
@@ -20,7 +24,7 @@ npm i
 
 `yarn run prod`
 
-### Bundle & release
+### Bundle & release to production
 
 `yarn run release`
 
@@ -35,3 +39,8 @@ Pull requests are welcome.
 ## License
 
 [GNU GPLv3](https://choosealicense.com/licenses/gpl-3.0/)
+
+## Screenshots
+
+![light](media/demo-light.png)
+![dark](media/demo-dark.png)
