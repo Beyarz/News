@@ -39,11 +39,14 @@ export async function getNews (): Promise<any> {
       const updated: Array<string> = []
       const title: Array<string> = []
       const description: Array<string> = []
+      let descriptionAssembly: string
       let tagsArrayLength: number = 0
       let componentsArrayLength: number = 0
       let adCounter: number = 0
 
       for (let i = 0; i <= newsCount.length - 1; i++) {
+        descriptionAssembly = ''
+
         if (newsCount[i].components[0].type !== 'advert') {
           tagsArrayLength = newsCount[i].tags.length
           componentsArrayLength = newsCount[i].components.length
@@ -55,10 +58,13 @@ export async function getNews (): Promise<any> {
 
           for (let z = 0; z <= componentsArrayLength - 1; z++) {
             if (newsCount[i].components[z].type === 'text') {
-              description.push(newsCount[i].components[z].text.value)
+              descriptionAssembly += newsCount[i].components[z].text.value
+              descriptionAssembly += ' '
+              descriptionAssembly += '<br>'
             }
           }
 
+          description.push(descriptionAssembly)
           author.push(newsCount[i].authors[0].title)
           created.push(new Date(newsCount[i].changes.created).toLocaleString())
           updated.push(new Date(newsCount[i].changes.updated).toLocaleString())
