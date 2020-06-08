@@ -39,15 +39,19 @@ export async function getNews (): Promise<any> {
       const updated: Array<string> = []
       const title: Array<string> = []
       const description: Array<string> = []
+
+      const ignoreKeyword: string = 'advert'
+      const allowedType: string = 'text'
+
       let descriptionAssembly: string
       let tagsArrayLength: number = 0
       let componentsArrayLength: number = 0
       let adCounter: number = 0
 
       for (let i = 0; i <= newsCount.length - 1; i++) {
-        descriptionAssembly = ''
+        if (newsCount[i].components[0].type !== ignoreKeyword) {
+          descriptionAssembly = ''
 
-        if (newsCount[i].components[0].type !== 'advert') {
           tagsArrayLength = newsCount[i].tags.length
           componentsArrayLength = newsCount[i].components.length
 
@@ -57,18 +61,18 @@ export async function getNews (): Promise<any> {
           }
 
           for (let z = 0; z <= componentsArrayLength - 1; z++) {
-            if (newsCount[i].components[z].type === 'text') {
+            if (newsCount[i].components[z].type === allowedType) {
               descriptionAssembly += newsCount[i].components[z].text.value
               descriptionAssembly += ' '
               descriptionAssembly += '<br>'
             }
           }
 
+          title.push(newsCount[i].title.value)
           description.push(descriptionAssembly)
           author.push(newsCount[i].authors[0].title)
           created.push(new Date(newsCount[i].changes.created).toLocaleString())
           updated.push(new Date(newsCount[i].changes.updated).toLocaleString())
-          title.push(newsCount[i].title.value)
         } else {
           adCounter += 1
         }
@@ -76,13 +80,13 @@ export async function getNews (): Promise<any> {
 
       const result: Result = {
         newsSize: newsCount.length - adCounter,
-        tagType: tagType,
-        tagTitle: tagTitle,
-        author: author,
-        created: created,
-        updated: updated,
-        title: title,
-        description: description,
+        tagType,
+        tagTitle,
+        author,
+        created,
+        updated,
+        title,
+        description,
         error: null
       }
       return result
@@ -97,7 +101,7 @@ export async function getNews (): Promise<any> {
         updated: null,
         title: null,
         description: null,
-        error: error
+        error
       }
 
       console.log(error)
