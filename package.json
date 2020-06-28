@@ -7,7 +7,7 @@
     "dotenv": "^8.2.0",
     "eslint": "^7.2.0",
     "fs": "0.0.1-security",
-    "now": "^19.0.1",
+    "now": "^19.1.1",
     "postcss-loader": "^3.0.0",
     "sass": "^1.26.8",
     "sass-loader": "^8.0.2",
