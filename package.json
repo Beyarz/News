@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "@now/node": "^1.6.1",
+    "@now/node": "^1.7.0",
     "autoprefixer": "^9.8.0",
     "axios": "^0.19.2",
     "css-loader": "^3.5.3",
