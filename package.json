@@ -16,7 +16,7 @@
     "typescript": "^3.9.7",
     "vercel": "^19.2.0",
     "webpack": "^4.44.0",
-    "snyk": "^1.367.0"
+    "snyk": "^1.369.0"
   },
   "name": "news",
   "version": "1.0.0",
