@@ -19,6 +19,10 @@
         "@typescript-eslint"
     ],
     "rules": {
-        "no-extra-semi":"error"
+        "no-extra-semi":"error",
+        "indent": ["warn", 2],
+        "no-mixed-spaces-and-tabs": "warn",
+        "no-tabs": "warn",
+        "space-before-blocks": "warn"
     }
 }

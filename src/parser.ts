@@ -91,6 +91,7 @@ export async function getNews (): Promise<any> {
       }
       return result
     })
+
     .catch(function (error: string): Result {
       const result: Result = {
         newsSize: null,
