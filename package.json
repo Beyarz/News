@@ -15,7 +15,7 @@
     "ts-loader": "^7.0.5",
     "typescript": "^3.9.7",
     "vercel": "^19.2.0",
-    "snyk": "^1.369.2",
+    "snyk": "^1.465.0",
     "webpack": "^4.44.1"
   },
   "name": "news",
