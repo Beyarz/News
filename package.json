@@ -1,7 +1,6 @@
 {
   "dependencies": {
     "autoprefixer": "^9.8.6",
-    "@now/node": "^1.7.4",
     "axios": "^0.19.2",
     "css-loader": "^3.6.0",
     "dotenv": "^8.2.0",
@@ -11,11 +10,11 @@
     "postcss-loader": "^3.0.0",
     "sass": "^1.26.10",
     "sass-loader": "^8.0.2",
+    "snyk": "^1.369.2",
     "style-loader": "^1.2.1",
     "ts-loader": "^7.0.5",
     "typescript": "^3.9.7",
     "vercel": "^19.2.0",
-    "snyk": "^1.369.2",
     "webpack": "^4.44.1"
   },
   "name": "news",
