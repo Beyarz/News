@@ -6,7 +6,6 @@
     "dotenv": "^8.2.0",
     "eslint": "^7.2.0",
     "fs": "0.0.1-security",
-    "now": "^21.0.1",
     "postcss-loader": "^3.0.0",
     "sass": "^1.26.10",
     "sass-loader": "^8.0.2",
@@ -14,7 +13,7 @@
     "style-loader": "^1.2.1",
     "ts-loader": "^7.0.5",
     "typescript": "^3.9.7",
-    "vercel": "^19.2.0",
+    "vercel": "^23.0.1",
     "webpack": "^4.44.1"
   },
   "name": "news",
