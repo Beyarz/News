@@ -1,0 +1,31 @@
+@media (prefers-color-scheme: light) {
+  html, body {
+    background-color: var(--bg-light);
+    transition: var(--bg-light), var(--dark), 1s;
+  }
+
+  .title {
+    color: var(--header-light)
+  }
+
+  .bottom-header {
+    color: var(--header-bottom-light)
+  }
+
+  .main-title {
+    color: var(--dark)
+  }
+
+  .subtitle {
+    color: var(--subtitle-light);
+    font-weight: 300;
+  }
+
+  .box {
+    background-color: var(--box-light)
+  }
+
+  .page-wrapper:before {
+    background-color: var(--box-light)
+  }
+}

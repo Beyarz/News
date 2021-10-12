@@ -1,0 +1,11 @@
+{
+  "recommendations": [
+    "meganrogge.template-string-converter",
+    "ebicochineal.select-highlight-cochineal-color",
+    "esbenp.prettier-vscode",
+    "xabikos.javascriptsnippets",
+    "oouo-diogo-perdigao.docthis",
+    "aaron-bond.better-comments",
+    "dbaeumer.vscode-eslint"
+  ]
+}

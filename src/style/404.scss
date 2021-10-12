@@ -1,0 +1,34 @@
+@import "./application.scss";
+@import url("https://fonts.googleapis.com/css?family=Cousine");
+
+.span-gray {
+  color: var(--gray);
+}
+
+.full-height {
+  height: 100vh;
+}
+
+.flex-center {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.position-ref {
+  position: relative;
+}
+
+.top-right {
+  position: absolute;
+  right: 10px;
+  top: 18px;
+}
+
+.content {
+  text-align: center;
+}
+
+.title {
+  font-size: 48px;
+}

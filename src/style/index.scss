@@ -1,0 +1,52 @@
+@import "./application.scss";
+@import "./light.scss";
+@import "./dark.scss";
+
+@media (prefers-color-scheme: no-preference) {
+  body {
+    background-color: var(--bg-light)
+  }
+
+  .main-title {
+    color: var(--dark)
+  }
+
+  .bottom-header {
+    color: var(--header-bottom-light)
+  }
+
+  .subtitle {
+    color: var(--subtitle-light);
+    font-weight: 200;
+  }
+
+  .box {
+    background-color: var(--box-light)
+  }
+
+  .page-wrapper:before {
+    background-color: var(--box-light)
+  }
+}
+
+.page-wrapper:before, .page-wrapper:after {
+  left: 0;
+  right: 0;
+  content: '';
+  height: 55vh;
+  position: absolute;
+}
+
+#news_content {
+  text-align: left
+}
+
+div.container {
+  &.article {
+    padding: 2rem
+  }
+
+  &.has-text-centered {
+    padding-top: 1rem
+  }
+}

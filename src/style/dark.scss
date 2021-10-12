@@ -1,0 +1,35 @@
+@media (prefers-color-scheme: dark) {
+  html, body {
+    background-color: var(--bg-dark);
+    transition: var(--bg-dark), var(--light), 1s;
+  }
+
+  .title {
+    color: var(--header-dark)
+  }
+
+  .main-title {
+    color: var(--light)
+  }
+
+  .bottom-header {
+    color: var(--header-bottom-dark)
+  }
+
+  .subtitle {
+    color: var(--subtitle-dark);
+    font-weight: 300;
+  }
+
+  .card-content {
+    background-color: var(--box-dark)
+  }
+
+  .page-wrapper:before {
+    background-color: var(--bg-lighter)
+  }
+
+  .content, p {
+    color: var(--light)
+  }
+}
