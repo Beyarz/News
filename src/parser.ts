@@ -32,7 +32,12 @@ async function getNews (): Promise<Result> {
         if (newsCount[i].components[0].type === ignoreKeyword) {
           adCounter += 1
         } else {
-          let tagsArrayLength: number = newsCount[i].tags.length
+          let tagsArrayLength: number = 0
+
+          if (newsCount[i].tags != null) {
+            tagsArrayLength = newsCount[i].tags.length
+          }
+
           if (tagsArrayLength != 0) {
             for (let x = 0; x < tagsArrayLength; x++) {
               tagType.push(newsCount[i].tags[x].type)
